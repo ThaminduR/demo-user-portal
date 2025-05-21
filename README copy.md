@@ -1,29 +1,6 @@
 # 🧑‍💻 User Portal
 
-A modern, responsive React app for user registration and login using OpenID Connect and Passkeys (WebAuthn), styled with Tailwind CSS and animated with Framer Motion.
-
----
-
-## 🚀 Features
-
-- 🔐 OIDC login (via WSO2 IS or any OIDC provider)
-- 🔑 Passkey (FIDO2/WebAuthn) registration flow
-- 💅 Tailwind CSS + Dark Mode
-- 🎞 Smooth UI transitions with Framer Motion
-- ⚙️ Dynamic OIDC config via `config.json`
-- ✅ Session handling, protected routes
-
----
-
-## 📦 Tech Stack
-
-- React + TypeScript
-- Tailwind CSS + Framer Motion
-- react-oidc-context
-- WebAuthn
-- Axios
-
----
+A React app for user registration and login using OpenID Connect.
 
 ## 🛠 Setup Instructions
 
@@ -60,7 +37,7 @@ Edit the `public/config.json`:
 }
 ```
 
-> 💡 Make sure the client ID and redirect URIs are registered in your Identity Provider.
+> Make sure the client ID and redirect URIs are registered in your Identity Provider.
 
 ---
 
