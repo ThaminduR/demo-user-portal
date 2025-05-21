@@ -1,0 +1,13 @@
+{
+  "providers": {
+    "dev": {
+      "issuer": "https://localhost:9443/oauth2/token",
+      "client_id": "<your-client-id>",
+      "redirect_uri": "http://localhost:3000/callback",
+      "post_logout_redirect_uri": "http://localhost:3000/login",
+      "silent_redirect_uri": "http://localhost:3000/silent-renew",
+      "scope": "openid profile email roles"
+    }
+  },
+  "defaultProvider": "dev"
+}
