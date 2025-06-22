@@ -27,11 +27,9 @@ fetch('/config.json')
     };
 
     root.render(
-      <React.StrictMode>
         <AuthProvider {...oidcConfig}>
           <App />
         </AuthProvider>
-      </React.StrictMode>
     );
   })
   .catch((error) => {

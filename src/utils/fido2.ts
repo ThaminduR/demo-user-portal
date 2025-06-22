@@ -67,22 +67,16 @@ export function decodePublicKeyCredentialOptions(request: any): PublicKeyCredent
     };
 }
 
-export async function createPasskey(interactionData: string): Promise<{
-    requestId: string;
-    credential: ReturnType<typeof encodeCredential>;
+export async function createPasskey(webAuthnData: any): Promise<{
+    credentialResponse: ReturnType<typeof encodeCredential>;
 }> {
-    const interaction = JSON.parse(interactionData);
-    const requestId = interaction.requestId;
-    const options = decodePublicKeyCredentialOptions(interaction.publicKeyCredentialCreationOptions);
-
+    const options = decodePublicKeyCredentialOptions(webAuthnData.publicKeyCredentialCreationOptions);
     const credential = await navigator.credentials.create({ publicKey: options });
 
     if (!credential) {
         throw new Error('Credential creation failed');
     }
-
     return {
-        requestId,
-        credential: encodeCredential(credential),
+        credentialResponse: encodeCredential(credential),
     };
 }
